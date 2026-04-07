@@ -1,3 +1,6 @@
+// ===== CONSTANTS =====
+const BUSINESS_EMAIL = 'Risenhandyman@gmail.com';
+
 // ===== MOBILE NAVIGATION =====
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
@@ -5,6 +8,7 @@ const navLinks  = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open'));
 });
 
 // Close nav when a link is clicked
@@ -12,6 +16,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     navLinks.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
   });
 });
 
@@ -47,19 +52,29 @@ if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Build a mailto link with the form contents
-    const name    = document.getElementById('fname').value;
-    const email   = document.getElementById('femail').value;
-    const phone   = document.getElementById('fphone').value;
+    // Client-side validation
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
     const service = document.getElementById('fservice').value;
-    const message = document.getElementById('fmessage').value;
+    const message = document.getElementById('fmessage').value.trim();
+    if (!name || !email || !service || !message) {
+      alert('Please fill in all required fields (Name, Email, Service, and Message).');
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
 
     const subject = encodeURIComponent(`Quote Request – ${service}`);
     const body    = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nService Needed: ${service}\n\nMessage:\n${message}`
     );
 
-    window.location.href = `mailto:Risenhandyman@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
 
     contactForm.reset();
     successMsg.style.display = 'block';
