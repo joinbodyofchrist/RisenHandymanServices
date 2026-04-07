@@ -7,7 +7,7 @@
 
 :root {
   --primary:   #1a5276;   /* deep navy blue */
-  --accent:    #e67e22;   /* warm orange    */
+  --accent:    #b22234;   /* American red   */
   --light-bg:  #f4f6f8;
   --dark-bg:   #0e2f4a;
   --text:      #2c3e50;
@@ -75,8 +75,10 @@ img {
   letter-spacing: 0.02em;
 }
 
-.nav-logo .logo-icon {
-  font-size: 1.6rem;
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -108,7 +110,7 @@ img {
 }
 
 .nav-cta:hover {
-  background: #cf6d17 !important;
+  background: #8b1a27 !important;
   opacity: 1 !important;
 }
 
@@ -225,7 +227,7 @@ img {
 }
 
 .btn-primary:hover {
-  background: #cf6d17;
+  background: #8b1a27;
 }
 
 .btn-outline {
@@ -497,12 +499,12 @@ section {
 
 .area-note {
   margin-top: 1.5rem;
-  background: #fff8f0;
-  border: 1px solid #f5cba7;
+  background: #fff5f5;
+  border: 1px solid #f5b7b1;
   border-radius: var(--radius);
   padding: 1rem 1.2rem;
   font-size: 0.9rem;
-  color: #7d4e08;
+  color: #78281f;
 }
 
 /* ===== CONTACT ===== */
@@ -653,7 +655,7 @@ section {
 }
 
 .form-submit:hover {
-  background: #cf6d17;
+  background: #8b1a27;
   transform: translateY(-2px);
 }
 
