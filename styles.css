@@ -140,7 +140,7 @@ img {
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary) 60%, #1f618d 100%);
+  background: linear-gradient(135deg, #1a5276 0%, #2980b9 60%, #5dade2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
