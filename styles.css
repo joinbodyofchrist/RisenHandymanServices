@@ -162,11 +162,17 @@ img {
   max-width: 800px;
 }
 
+.hero-logo {
+  width: 280px;
+  max-width: 80%;
+  margin: 0 auto 1.5rem;
+}
+
 .hero-badge {
   display: inline-block;
-  background: rgba(230,126,34,0.2);
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid var(--white);
+  color: var(--white);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
